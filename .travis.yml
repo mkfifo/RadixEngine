@@ -11,5 +11,6 @@ matrix:
         - pip install --user cpp-coveralls
       script:
         - docker run -it --rm -w /data -v $(pwd):/data glportal/whale-gcc:coverall bash -c "cmake -DCOVERAGE:BOOL=ON ./&& make && make tests && ctest && cmake -DCOVERAGE:BOOL=ON ./&& make && make tests && ctest;"
+        - coveralls --dryrun -i include -i source -e tests --gcov-options \'-lp\'
         - coveralls -i include -i source -e tests --gcov-options \'-lp\'
 
