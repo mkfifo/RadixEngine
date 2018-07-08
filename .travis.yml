@@ -14,4 +14,4 @@ matrix:
         - coveralls -i include -i source -e tests --gcov-options \'-lp\'
         - find . -iname '*.gcda' | wc -l
         - find . -iname '*.gcno' | wc -l
-        - grep -Rni '--coverage' CMakeFiles/* | wc-l
+        - grep -Rni 'coverage' CMakeFiles/* | wc-l
