@@ -9,5 +9,7 @@ matrix:
       before_install: 
         - docker pull glportal/whale-gcc:coverall
       script:
-        - docker run -it --rm -w /data -v $(pwd):/data glportal/whale-gcc:coverall bash -c "cmake -DCOVERAGE:BOOL=ON ./&& make && make tests && ctest && coveralls -i include -i source -e tests --gcov-options \'-lp\';"
+        - docker run -it --rm -w /data -v $(pwd):/data glportal/whale-gcc:coverall bash -c "cmake -DCOVERAGE:BOOL=ON ./&& make && make tests;"
+        - ls -la
+        - ls -la docroot
 
